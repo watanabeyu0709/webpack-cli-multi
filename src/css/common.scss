@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import '~normalize.css';
+
+/*-----------------------------------------------------------------------------------
+
+	Css Name: watanabe.scss
+	Description: watanabeyu's style sheet for flexible
+	Author: WatanabeYu
+
+----------------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+	参数
+-----------------------------------------------------------------*/
+//定义字体
+$ff: 'PingFang SC','Microsoft Yahei','Droid Sans', Helvetica, Arial, sans-serif;
+//基准栅栏
+$bar: 15px;
+//定义基准行高
+$lh: 1.5;
+/*定义色彩 LV越小(越高) 颜色越正*/
+$color_success:#09AA09!default;
+$color_info:#2dbbed!default;
+$color_primary:#067bd8!default;
+$color_warning: #ff8400 !default;
+$color_danger:#FA4D24!default;
+$color_sim: #333 #666 #a6a6a6 #ccc #ddd #ebebeb #f9f9f9 #f5f5f5 #f3f3f3 #fff!default;
+$color_link: nth($color_sim,1) nth($color_sim,2) !default;//第一个值为默认值，第二个鼠标滑过值
+
+/* ----------------------------------------------------------------
+	附加样式
+-----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+	定义代码片段 前缀hack已用autoprefixer-loader代替
+-----------------------------------------------------------------*/
+/*媒体查询*/
+@mixin media($res-min,$res-max){
+  @media only screen and ( min-device-width: $res-min ) and ( max-device-width: $res-max )
+  {
+    @content;
+  }
+}
+@mixin media-min($res-min){
+  @media only screen and ( min-device-width: $res-min )
+  {
+    @content;
+  }
+}
+@mixin media-max($res-max){
+  @media only screen and ( max-device-width: $res-max )
+  {
+    @content;
+  }
+}
+
+/*省略显示点点点,移动端通用*/
+@mixin ell($line:1){
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+/*flex*/
+//定义父元素布局为盒模型
+.flex-box{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  //盒模型垂直布局
+  &.flex-v {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
