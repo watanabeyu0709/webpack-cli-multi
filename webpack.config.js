@@ -166,7 +166,7 @@ let webpackConfig = module.exports = {
 let view = '';
 if(process.env.NODE_ENV.includes('Mobile')){
     view = 'mobile';
-}else if(process.env.NODE_ENV.includes('pc')){
+}else if(process.env.NODE_ENV.includes('Pc')){
     view = 'pc';
 }
 
