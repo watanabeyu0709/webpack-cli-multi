@@ -147,6 +147,13 @@ let webpackConfig = module.exports = {
             hash: true,
             chunks: ['index'],
         }),
+        //react 压缩处理
+        (process.env.NODE_ENV === 'production')?
+            new webpack.DefinePlugin({
+                "process.env": {
+                    NODE_ENV: JSON.stringify("production")
+                }
+            }):function(){},
         //丑化JS
         (process.env.NODE_ENV.includes('production')) ? new babili() : function(){},
         //样式导出配置

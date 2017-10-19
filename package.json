@@ -1,7 +1,7 @@
 {
-  "name": "kphone_web",
-  "version": "0.0.3",
-  "description": "Kphone for web app",
+  "name": "webpack-cli-multi",
+  "version": "1.0.0",
+  "description": "a simple webpack config cli for multi apps suooprt vue & react",
   "main": "views/mobile/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "build": "npm run build-mobile && npm run build-pc && npm run build-thinker"
   },
   "keywords": [],
-  "author": "thinker",
+  "author": "watanabeyu",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.1",
