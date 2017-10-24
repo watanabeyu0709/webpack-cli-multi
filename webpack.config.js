@@ -70,12 +70,8 @@ let webpackConfig = module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            ["env", {
-                                "targets": {
-                                    "browsers": ["> 1%", "last 2 versions", "not ie <= 8"],
-                                    "node":"current"
-                                }
-                            }]
+                            "env",
+                            "stage-3"
                         ]
                     }
                 }
