@@ -24,13 +24,13 @@
 
 >>> mobile mobile模块目录
 
->>>> *** mobile模块里的资源 包括JS,CSS等
+>>>> ... mobile模块里的资源 包括JS,CSS等
 
 >>> pc pc模块目录
 
->>>> *** pc模块里的资源 包括JS,CSS等
+>>>> ... pc模块里的资源 包括JS,CSS等
 
->> ...
+>> ... 其他模块
 
 >> template.html 主模板/页面
 
@@ -38,19 +38,13 @@
 
 >> mobile
 
->>> css,js等文件
-
->>> html
+>>> ...
 
 >> pc
 
->>> css,js等文件
+>>> ...
 
->>> html
-
->> ...
-
->> template.html
+>> ... 其他模块
 
 > .babelrc babel配置文件
 
