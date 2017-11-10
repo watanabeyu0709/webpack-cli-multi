@@ -1,6 +1,6 @@
 {
   "name": "webpack-cli-multi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple webpack config cli for multi apps suooprt vue & react",
   "main": "views/*/main.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev-pc": "cross-env NODE_ENV=devcelopPc PLATFORM=web webpack-dev-server",
     "build-mobile": "cross-env NODE_ENV=productionMobile PLATFORM=web webpack",
     "build-pc": "cross-env NODE_ENV=productionPc PLATFORM=web webpack",
-    "build": "npm run build-mobile && npm run build-pc && npm run build-thinker"
+    "build": "npm run build-mobile && npm run build-pc"
   },
   "keywords": [],
   "author": "watanabeyu",
@@ -23,7 +23,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
-    "clean-webpack-plugin": "^0.1.16",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.4.1",

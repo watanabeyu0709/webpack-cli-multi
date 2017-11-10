@@ -15,6 +15,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');//html模板引擎
+const CopyWebpackPlugin = require('copy-webpack-plugin');//copy静态文件
 const CleanWebpackPlugin = require('clean-webpack-plugin');//构建时清理
 const ExtractTextPlugin = require("extract-text-webpack-plugin");//分离样式表
 const extractCSS = new ExtractTextPlugin(process.env.NODE_ENV.includes('production')?'css/[name]-css.[chunkhash].css':'css/[name]-css.css');//导出css
@@ -158,25 +159,34 @@ let webpackConfig = module.exports = {
     ]
 };
 
-/*变化入口*/
+/*设置多views*/
 let view = '';
 if(process.env.NODE_ENV.includes('Mobile')){
     view = 'mobile';
 }else if(process.env.NODE_ENV.includes('Pc')){
     view = 'pc';
 }
-
+/*变化入口*/
 webpackConfig.entry={
     index: ['babel-polyfill',`./src/views/${view}/index.js`],
 };
+/*变化出口*/
 webpackConfig.output.path = path.resolve(__dirname, `dist/${view}`);
+/*变化resolve*/
 webpackConfig.resolve.alias={
     'vue$': 'vue/dist/vue.esm.js',
     '^': path.resolve(__dirname+'/src'),//项目根目录
     '@': path.resolve(`src/views/${view}`),//views根目录
 };
+/*plugins处理*/
 webpackConfig.plugins.push(
-    new CleanWebpackPlugin([`dist/${view}`]),
+    /*生产环境清理文件夹*/
+    (process.env.NODE_ENV.includes('production'))?new CleanWebpackPlugin([`dist/${view}`]):function () {},
+    /*copy静态static*/
+    new CopyWebpackPlugin([{
+        from: __dirname + '/src/static',
+        to:  __dirname + `/dist/${view}/static`,
+    }])
 );
 
 
