@@ -142,7 +142,7 @@ let webpackConfig = module.exports = {
             template: __dirname + "/src/template.html",
             inject: 'body',
             hash: true,
-            chunks: ['index'],
+            chunks: ['common','index'],
         }),
         //react 压缩处理
         (process.env.NODE_ENV === 'production')?
@@ -151,6 +151,10 @@ let webpackConfig = module.exports = {
                     NODE_ENV: JSON.stringify("production")
                 }
             }):function(){},
+        //提取公共部分代码
+        new webpack.optimize.CommonsChunkPlugin({
+            name:"common",
+        }),
         //丑化JS
         (process.env.NODE_ENV.includes('production')) ? new babili() : function(){},
         //样式导出配置

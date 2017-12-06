@@ -1,6 +1,6 @@
 {
   "name": "webpack-cli-multi",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "description": "a simple webpack config cli for multi apps suooprt vue & react",
   "main": "views/*/main.js",
   "scripts": {
