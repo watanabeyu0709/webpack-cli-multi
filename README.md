@@ -1,35 +1,32 @@
-## Introduce   
-
+## Introduce
 this is a simple self use cli for multi-views app with webpack
 
 ## Base on
-
-node `8.6.0`   
+node `8.6.0`
 npm `5.3.0`
 
 ## Quick to start
-1.make sure you have install webpack npm with global  
-2.download this project  
-3.npm install  
-4.npm run dev-* (example:npm run dev-mobile) `develop mode`  
-5.npm run build-* (example:npm run build-mobile)  `build mode`  
+1.make sure you have install webpack npm with global
+2.download this project
+3.npm install
+4.npm run dev-* (example:npm run dev-mobile) `develop mode`
+5.npm run build-* (example:npm run build-mobile)  `build mode`
 
 ## Directory
-
 ```
-|--- dist #build files    
-|--- node_modules #node packages  
-|--- src #dev folder  
+|--- dist #build files
+|--- node_modules #node packages
+|--- src #dev folder
     |--- components #global components
-    |--- css #global css 
-        |--- common.scss #global css-style  
-        |--- variable.scss #global css-variable  
-    |--- img #global img 
-    |--- js #global script 
-        |--- api.js #api conf 
-        |--- common.js #global js with all plugins & functions & conts 
-        |--- ... 
-    |--- static #static files for relative path 
+    |--- css #global css
+        |--- common.scss #global css-style
+        |--- variable.scss #global css-variable
+    |--- img #global img
+    |--- js #global script
+        |--- api.js #api conf
+        |--- common.js #global js with all plugins & functions & conts
+        |--- ...
+    |--- static #static files for relative path
     |--- views #all views
         |--- mobile #display mode
             |--- components #private components
