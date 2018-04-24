@@ -70,8 +70,9 @@ let webpackConfig = module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [
+                       presets: [
                             "env",
+                            "react",
                             "stage-3"
                         ]
                     }
